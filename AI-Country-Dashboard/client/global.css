@@ -1,0 +1,123 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Orbitron:wght@500;700&family=Space+Grotesk:wght@400;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+  */
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 234 57% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 234 57% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 234 57% 10%;
+
+    /* Neon-leaning light theme */
+    --primary: 195 100% 45%; /* neon cyan */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 258 100% 98%;
+    --secondary-foreground: 251 43% 20%;
+
+    --muted: 220 16% 94%;
+    --muted-foreground: 224 15% 45%;
+
+    --accent: 305 100% 60%; /* neon magenta */
+    --accent-foreground: 260 100% 98%;
+
+    --destructive: 4 86% 58%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 16% 90%;
+    --input: 220 16% 90%;
+    --ring: 195 100% 45%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 100%;
+
+    --sidebar-foreground: 234 57% 10%;
+
+    --sidebar-primary: 195 100% 45%;
+
+    --sidebar-primary-foreground: 0 0% 100%;
+
+    --sidebar-accent: 258 100% 98%;
+
+    --sidebar-accent-foreground: 251 43% 20%;
+
+    --sidebar-border: 220 16% 90%;
+
+    --sidebar-ring: 305 100% 60%;
+  }
+
+  .dark {
+    --background: 230 25% 6%;
+    --foreground: 210 20% 96%;
+
+    --card: 230 22% 8%;
+    --card-foreground: 210 20% 96%;
+
+    --popover: 230 22% 8%;
+    --popover-foreground: 210 20% 96%;
+
+    /* Neon dark theme */
+    --primary: 185 100% 50%; /* electric cyan */
+    --primary-foreground: 230 25% 10%;
+
+    --secondary: 232 19% 14%;
+    --secondary-foreground: 210 20% 96%;
+
+    --muted: 232 19% 14%;
+    --muted-foreground: 220 12% 72%;
+
+    --accent: 305 100% 60%; /* neon magenta */
+    --accent-foreground: 230 25% 10%;
+
+    --destructive: 4 64% 42%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 232 19% 20%;
+    --input: 232 19% 20%;
+    --ring: 185 100% 50%;
+
+    --sidebar-background: 230 25% 6%;
+    --sidebar-foreground: 210 20% 96%;
+    --sidebar-primary: 185 100% 50%;
+    --sidebar-primary-foreground: 230 25% 10%;
+    --sidebar-accent: 232 19% 14%;
+    --sidebar-accent-foreground: 210 20% 96%;
+    --sidebar-border: 232 19% 20%;
+    --sidebar-ring: 305 100% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Space Grotesk", Inter, ui-sans-serif, system-ui, sans-serif;
+    background-image:
+      radial-gradient(60rem 60rem at top right, hsl(var(--accent) / 0.12), transparent 60%),
+      radial-gradient(48rem 48rem at bottom left, hsl(var(--primary) / 0.10), transparent 60%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  h1,h2,h3 {
+    font-family: Orbitron, "Space Grotesk", Inter, ui-sans-serif, system-ui, sans-serif;
+    letter-spacing: 0.02em;
+  }
+}
